@@ -14,4 +14,8 @@ public:
   string getNumeroString();
   double getValor();
   virtual void calcularValor();
+
+  virtual Numero* operator+();
+  virtual Numero* operator-();
+  virtual Numero* operator*();
 };

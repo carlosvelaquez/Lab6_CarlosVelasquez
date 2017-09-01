@@ -7,5 +7,10 @@ using namespace std;
 class Hexadecimal : public Numero{
 public:
   Hexadecimal(string);
+  Hexadecimal(int);
   void calcularValor();
+
+  Numero* operator+();
+  Numero* operator-();
+  Numero* operator*();
 };

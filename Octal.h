@@ -7,5 +7,10 @@ using namespace std;
 class Octal : public Numero{
 public:
   Octal(string);
+  Octal(int);
   void calcularValor();
+
+  Numero* operator+();
+  Numero* operator-();
+  Numero* operator*();
 };

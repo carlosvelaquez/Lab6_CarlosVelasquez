@@ -9,3 +9,6 @@ Octal.o: Numero.h Octal.h Octal.cpp
 
 Hexadecimal.o: Numero.h Hexadecimal.h Hexadecimal.cpp
 	g++ Hexadecimal.cpp -c
+
+clean:
+	rm Binario.o Hexadeimal.o Octal.o
