@@ -12,24 +12,25 @@ Hexadecimal::Hexadecimal(int valorDecimal){
   while (!salir) {
     if (valorDecimal%16 > 9) {
       switch (valorDecimal%16 > 9) {
-        case 10:
+        case (10): {
         hex += 'A';
         break;
-        case 11:
+      }
+        case (11):{
         hex += 'B';
-        break;
-        case 12:
+        break;}
+        case (12):{
         hex += 'C';
-        break;
-        case 13:
+        break;}
+        case (13):{
         hex += 'D';
-        break;
-        case 14:
+        break;}
+        case (14):{
         hex += 'E';
-        break;
-        case 15:
+        break;}
+        case (15):{
         hex += 'F';
-        break;
+        break;}
       }
     }else{
       hex += valorDecimal%16;

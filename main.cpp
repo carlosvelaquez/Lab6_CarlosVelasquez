@@ -185,10 +185,10 @@ void mostrarResultados(int valor){
   Hexadecimal hex(valor);
   cout << "Resultados" << endl << endl;
 
-  cout << "Decimal: " << dec.numeroString() << endl;
-  cout << "Binario: " << bin.numeroString() << endl;
-  cout << "Octal: " << oct.numeroString() << endl;
-  cout << "Hexadecimal: " << hex.numeroString() << endl;
+  cout << "Decimal: " << dec.getNumeroString() << endl;
+  cout << "Binario: " << bin.getNumeroString() << endl;
+  cout << "Octal: " << oct.getNumeroString() << endl;
+  cout << "Hexadecimal: " << hex.getNumeroString() << endl;
 }
 
 /*Numero* resultados = new Numero[4];

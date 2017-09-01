@@ -11,6 +11,7 @@ protected:
   string tipo;
   double valor;
 public:
+  Numero();
   string getNumeroString();
   double getValor();
   virtual void calcularValor();
