@@ -1,5 +1,8 @@
 #include "Octal.h"
 
+Octal::Octal(){}
+Octal::~Octal(){}
+
 Octal::Octal(string nString){
   numeroString = nString;
   calcularValor();

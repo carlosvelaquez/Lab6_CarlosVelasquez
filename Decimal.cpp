@@ -1,5 +1,8 @@
 #include "Decimal.h"
 
+Decimal::Decimal(){}
+Decimal::~Decimal(){}
+
 Decimal::Decimal(string nString){
   numeroString = nString;
   calcularValor();
@@ -11,5 +14,5 @@ Decimal::Decimal(int nValor){
 }
 
 void Decimal::calcularValor(){
-  return atoi(numeroString.c_str());
+  valor = atoi(numeroString.c_str());
 }

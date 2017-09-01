@@ -80,12 +80,12 @@ Numero anadirNumero(){
         Octal num(numeroNuevo);
         return num;
       }break;
-      case 5:{
+      case 4:{
         Decimal num(numeroNuevo);
         return num;
       }break;
       default:{
-        cout << "Notación no válida, por favor intente de nuevo." << endl << endl;
+        cout << "Notación no válida, por favor intente de nuevo." << endl;
       }break;
     }
 
@@ -110,9 +110,10 @@ int identificarTipo(string numeroString){
       }
       return 2;
     }else if(numeroString[0] == '0' && numeroString[1] == 'c'){
+      std::cout << numeroString << '\n';
       for (int i = 2; i < numeroString.length(); i++) {
         if (isdigit(numeroString[i])) {
-          if ((int)numeroString[i] > 7) {
+          if (((int)(numeroString[i])) > 7) {
             return 5;
           }
         }else{
@@ -121,9 +122,15 @@ int identificarTipo(string numeroString){
       }
 
       return 3;
+    }else{
+      for (int i = 0; i < numeroString.length(); i++) {
+        if (isdigit(numeroString[i]) == false) {
+          return 5;
+        }
+      }
     }
 
-    return 5;
+    return 4;
 }
 
 void realizarOperacion(vector<Numero> numeros){

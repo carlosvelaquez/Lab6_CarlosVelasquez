@@ -1,11 +1,23 @@
 #include "Numero.h"
 
+Numero::Numero() {
+
+}
+
+Numero::~Numero() {
+
+}
+
 string Numero::getNumeroString(){
   return numeroString;
 }
 
 double Numero::getValor(){
   return valor;
+}
+
+void Numero::calcularValor(){
+  valor = 0;
 }
 
 /*Numero* Numero::operator+(&Numero num){

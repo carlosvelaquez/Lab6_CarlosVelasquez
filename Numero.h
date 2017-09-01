@@ -12,6 +12,7 @@ protected:
   double valor;
 public:
   Numero();
+  virtual ~Numero();
   string getNumeroString();
   double getValor();
   virtual void calcularValor();

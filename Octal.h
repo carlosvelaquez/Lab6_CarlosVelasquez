@@ -6,6 +6,8 @@ using namespace std;
 
 class Octal : public Numero{
 public:
+  Octal();
+  ~Octal();
   Octal(string);
   Octal(int);
   void calcularValor();

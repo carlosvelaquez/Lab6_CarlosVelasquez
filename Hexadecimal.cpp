@@ -1,5 +1,8 @@
 #include "Hexadecimal.h"
 
+Hexadecimal::Hexadecimal(){}
+Hexadecimal::~Hexadecimal(){}
+
 Hexadecimal::Hexadecimal(string nString){
   numeroString = nString;
   calcularValor();
@@ -11,7 +14,7 @@ Hexadecimal::Hexadecimal(int valorDecimal){
 
   while (!salir) {
     if (valorDecimal%16 > 9) {
-      switch (valorDecimal%16 > 9) {
+      switch (valorDecimal%16) {
         case (10): {
         hex += 'A';
         break;

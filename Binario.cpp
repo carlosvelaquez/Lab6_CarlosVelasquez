@@ -1,5 +1,8 @@
 #include "Binario.h"
 
+Binario::Binario(){}
+Binario::~Binario(){}
+
 Binario::Binario(string nString){
   numeroString = nString;
   calcularValor();
