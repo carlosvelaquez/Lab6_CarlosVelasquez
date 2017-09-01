@@ -10,9 +10,12 @@ Decimal::Decimal(string nString){
 
 Decimal::Decimal(int nValor){
   valor = nValor;
-  numeroString = valor;
+  string numStr = "";
+  numStr += to_string(valor);
+  numeroString = numStr;
 }
 
 void Decimal::calcularValor(){
   valor = atoi(numeroString.c_str());
+  std::cout << "Valor decimal: " << valor << '\n';
 }

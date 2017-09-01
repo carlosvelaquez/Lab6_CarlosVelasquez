@@ -36,7 +36,7 @@ Hexadecimal::Hexadecimal(int valorDecimal){
         break;}
       }
     }else{
-      hex += valorDecimal%16;
+      hex += (char)((valorDecimal%16)+48);
     }
 
     valorDecimal /= 16;
@@ -53,18 +53,18 @@ Hexadecimal::Hexadecimal(int valorDecimal){
   }
 
   numeroString = hexadecimal;
-  std::cout << hexadecimal << '\n';
   calcularValor();
 }
 
 void Hexadecimal::calcularValor(){
   double calculado;
+  int nStringLength = numeroString.length();
 
-  for (int i = 2; i < numeroString.length(); i++) {
+  for (int i = 2; i < nStringLength; i++) {
     int digito;
 
     if (isdigit(numeroString[i])) {
-      digito = (int)numeroString[i];
+      digito = ((int)numeroString[i]) - 48;
     }else{
       switch (numeroString[i]) {
         case 'A':
@@ -88,9 +88,15 @@ void Hexadecimal::calcularValor(){
       }
     }
 
-    calculado += (digito * (pow(16, (numeroString.length()-3-i))));
+      //std::cout << "Digito: " << digito << '\n';
+
+    calculado += (digito * (pow(16, (nStringLength-1-i))));
+    //std::cout << "Power: " << (nStringLength-1-i) << '\n';
+    //std::cout << calculado << '\n';
   }
 
-  std::cout << calculado << '\n';
+  //std::cout << calculado << '\n';
   valor = calculado;
+  //string numStr = "";
+  //numStr += to_string(valor);
 }

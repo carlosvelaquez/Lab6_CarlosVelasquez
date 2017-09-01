@@ -13,7 +13,7 @@ Octal::Octal(int valorDecimal){
   string oct = "";
 
   while (!salir) {
-    oct += valorDecimal%8;
+    oct += (char)((valorDecimal%8) + 48);
     valorDecimal /= 8;
 
     if (valorDecimal <= 0) {
@@ -36,12 +36,14 @@ void Octal::calcularValor(){
   double calculado = 0;
 
   for (int i = 2; i < numeroString.length(); i++) {
-    calculado += ((int)numeroString[i]);
+    calculado += ((int)numeroString[i]) - 48;
     if (i < numeroString.length() - 1) {
       calculado *= 8;
     }
   }
 
-  std::cout << calculado << '\n';
   valor = calculado;
+  //string numStr = "";
+  //numStr += to_string(valor);
+  //numeroString = numStr;
 }

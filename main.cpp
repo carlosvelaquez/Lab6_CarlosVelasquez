@@ -51,6 +51,7 @@ int menu(){
   << "1. Añadir Número" << endl
   << "2. Realizar Operación" << endl
   << "3. Limpiar Caché de Números" << endl
+  << "4. Salir del Programa" << endl
   << endl << "Ingrese el número de la opción que desea - ";
   cin >> opcion;
   cout << "-------------------------------" << endl;
@@ -113,7 +114,7 @@ int identificarTipo(string numeroString){
       std::cout << numeroString << '\n';
       for (int i = 2; i < numeroString.length(); i++) {
         if (isdigit(numeroString[i])) {
-          if (((int)(numeroString[i])) > 7) {
+          if (((int)(numeroString[i]) - 48) > 7) {
             return 5;
           }
         }else{

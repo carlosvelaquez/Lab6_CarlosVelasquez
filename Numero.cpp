@@ -12,6 +12,7 @@ string Numero::getNumeroString(){
   return numeroString;
 }
 
+//double Numero::getValor(){
 double Numero::getValor(){
   return valor;
 }
