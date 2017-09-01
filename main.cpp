@@ -1,14 +1,18 @@
 #include <vector>
 #include <iostream>
 #include "Numero.h"
+#include "Decimal.h"
+#include "Binario.h"
+#include "Hexadecimal.h"
+#include "Octal.h"
 
 using namespace std;
 
 int menu();
 Numero anadirNumero();
-void realizarOperacion(vector<numeros>);
-void limpiarCache(vector<numeros>);
-int identificarTipo();
+void realizarOperacion(vector<Numero>);
+void limpiarCache(vector<Numero>);
+int identificarTipo(string);
 
 int main(){
   vector<Numero> numeros;
@@ -54,7 +58,7 @@ int menu(){
 
 Numero anadirNumero(){
   string numeroNuevo;
-  continuar = false;
+  bool continuar = false;
   cout << "Añadir Número" << endl;
 
   while (!continuar) {
@@ -79,12 +83,12 @@ Numero anadirNumero(){
         Decimal num(numeroNuevo);
         return num;
       }break;
-      default{
+      default:{
         cout << "Notación no válida, por favor intente de nuevo." << endl << endl;
       }break;
     }
 
-    return NULL;
+    return Decimal("0");
   }
 }
 

@@ -1,8 +1,12 @@
 #pragma once
 #include <string>
+#include <cmath>
+#include <iostream>
+
+using namespace std;
 
 class Numero{
-private:
+protected:
   string numeroString;
   string tipo;
   double valor;
