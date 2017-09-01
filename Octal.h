@@ -9,8 +9,4 @@ public:
   Octal(string);
   Octal(int);
   void calcularValor();
-
-  Numero* operator+();
-  Numero* operator-();
-  Numero* operator*();
 };

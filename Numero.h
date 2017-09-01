@@ -15,7 +15,20 @@ public:
   double getValor();
   virtual void calcularValor();
 
-  virtual Numero* operator+();
-  virtual Numero* operator-();
-  virtual Numero* operator*();
+  int operator+(Numero& num){
+    Numero* resultados = new Numero[4];
+    return this->getValor() + num.getValor();
+  }
+
+  int operator-(Numero& num){
+    Numero* resultados = new Numero[4];
+    return this->getValor() - num.getValor();
+  }
+
+  int operator*(Numero& num){
+    Numero* resultados = new Numero[4];
+    return this->getValor() * num.getValor();
+  }
+  //Numero* operator-(&Numero);
+  //Numero* operator*(&Numero);
 };

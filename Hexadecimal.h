@@ -9,8 +9,4 @@ public:
   Hexadecimal(string);
   Hexadecimal(int);
   void calcularValor();
-
-  Numero* operator+();
-  Numero* operator-();
-  Numero* operator*();
 };

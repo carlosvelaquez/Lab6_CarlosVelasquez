@@ -7,10 +7,6 @@ using namespace std;
 class Binario : public Numero{
 public:
   Binario(string);
-  Binario(double);
+  Binario(int);
   void calcularValor();
-
-  Numero* operator+();
-  Numero* operator-();
-  Numero* operator*();
 };

@@ -7,10 +7,6 @@ using namespace std;
 class Decimal : public Numero{
 public:
   Decimal(string);
-  Decimal(double);
+  Decimal(int);
   void calcularValor();
-
-  Numero* operator+();
-  Numero* operator-();
-  Numero* operator*();
 };

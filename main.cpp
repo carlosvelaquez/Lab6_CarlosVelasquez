@@ -11,8 +11,9 @@ using namespace std;
 int menu();
 Numero anadirNumero();
 void realizarOperacion(vector<Numero>);
-void limpiarCache(vector<Numero>);
+//void limpiarCache(vector<Numero>);
 int identificarTipo(string);
+void mostrarResultados(int);
 
 int main(){
   vector<Numero> numeros;
@@ -30,7 +31,7 @@ int main(){
         realizarOperacion(numeros);
       }break;
       case 3:{
-        limpiarCache(numeros);
+        //limpiarCache(numeros);
       }break;
       case 4:{
         salir = true;
@@ -124,3 +125,84 @@ int identificarTipo(string numeroString){
 
     return 5;
 }
+
+void realizarOperacion(vector<Numero> numeros){
+  int op1, op2;
+  Numero n1, n2;
+
+  cout << "Realizar Operación" << endl << endl;
+
+  cout << "Seleccione el numero al que operar" << endl;
+
+  for (int i = 0; i < numeros.size(); i++) {
+    cout << i << ". " << numeros.at(i).getNumeroString() << endl;
+  }
+
+  cout << endl << "Ingrese su selección -  ";
+  cin >> op1;
+  n1 = (numeros.at(op1));
+
+  cout << endl << "Seleccione el numero con el cual operar" << endl;
+  for (int i = 0; i < numeros.size(); i++) {
+    cout << i << ". " << numeros.at(i).getNumeroString() << endl;
+  }
+  cout << endl << "Ingrese su selección -  ";
+  cin >> op2;
+  n2 = (numeros.at(op2));
+
+  int oper;
+
+  cout << "Seleccione el tipo de operación" << endl
+  << "1. Suma" << endl
+  << "2. Resta" << endl
+  << "3. Multiplicar" << endl << endl
+  << "Ingrese el número de la opción que desea - ";
+
+  cin >> oper;
+
+  switch (oper) {
+    case 1:{
+      //mostrarResultados((*n1)+(*n2));
+      mostrarResultados(n1+n2);
+    }break;
+    case 2:{
+      //mostrarResultados((*n1)-(*n2));
+      mostrarResultados(n1-n2);
+    }break;
+    case 3:{
+      //mostrarResultados((*n1)*(*n2));
+      mostrarResultados(n1*n2);
+    }break;
+  }
+
+}
+
+void mostrarResultados(int valor){
+  cout << "-------------------------------" << endl;
+  Decimal dec(valor);
+  Binario bin(valor);
+  Octal oct(valor);
+  Hexadecimal hex(valor);
+  cout << "Resultados" << endl << endl;
+
+  cout << "Decimal: " << dec.numeroString() << endl;
+  cout << "Binario: " << bin.numeroString() << endl;
+  cout << "Octal: " << oct.numeroString() << endl;
+  cout << "Hexadecimal: " << hex.numeroString() << endl;
+}
+
+/*Numero* resultados = new Numero[4];
+int valor = this->getValor() + num.getValor();
+
+Decimal dec(valor);
+Binario bin(valor);
+Octal oct(valor);
+Hexadecimal hex(valor);
+
+resultados[0] = dec;
+resultados[1] = bin;
+resultados[2] = oct;
+resultados[3] = hex;
+
+return resultados;
+}*/

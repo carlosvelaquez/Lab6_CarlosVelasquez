@@ -5,14 +5,14 @@ Binario::Binario(string nString){
   calcularValor();
 }
 
-Binario::Binario(double valorDecimal){
+Binario::Binario(int valorDecimal){
   bool salir = false;
   string bin = "";
 
   while (!salir) {
     bin += valorDecimal%2;
     valorDecimal -= valorDecimal%2;
-    valorDecimal =/ 2;
+    valorDecimal /= 2;
 
     if (valorDecimal <= 1) {
       salir = true;

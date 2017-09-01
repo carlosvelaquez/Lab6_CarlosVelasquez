@@ -42,7 +42,3 @@ void Octal::calcularValor(){
   std::cout << calculado << '\n';
   valor = calculado;
 }
-
-Numero* Octal::operator+(){
-  
-}

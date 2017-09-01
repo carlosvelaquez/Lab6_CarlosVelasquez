@@ -1,5 +1,8 @@
-out: Binario.o Hexadecimal.o Octal.o main.cpp
+out: Numero.o Binario.o Hexadecimal.o Octal.o main.cpp
 	g++ Binario.o Hexadecimal.o Octal.o main.cpp -o out
+
+Numero.o: Numero.h Numero.cpp
+	g++ Numero.cpp -c
 
 Binario.o: Numero.h Binario.h Binario.cpp
 	g++ Binario.cpp -c
