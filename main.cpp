@@ -29,7 +29,11 @@ int main(){
         cout << endl << "Número añadido exitosamente" << endl;
       }break;
       case 2:{
-        realizarOperacion(numeros);
+        if (numeros.size() > 0) {
+          realizarOperacion(numeros);
+        }else{
+          cout << "Aún no tiene números en el caché" << endl;
+        }
       }break;
       case 3:{
         numeros.clear();
