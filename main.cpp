@@ -33,7 +33,7 @@ int main(){
       }break;
       case 3:{
         numeros.clear();
-        cout << endl << "Caché limpiado exitosamente" << endl;
+        cout << "Caché limpiado exitosamente" << endl;
       }break;
       case 4:{
         salir = true;
