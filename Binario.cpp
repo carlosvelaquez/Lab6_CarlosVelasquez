@@ -47,6 +47,7 @@ void Binario::calcularValor(){
 
   //std::cout << calculado << '\n';
   valor = calculado;
+  std::cout << "Valor decimal: " << valor << '\n';
   //string numStr = "";
   //numStr += to_string(valor);
   //numeroString = numStr;

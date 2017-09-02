@@ -28,7 +28,6 @@ Octal::Octal(int valorDecimal){
   }
 
   numeroString = octal;
-  std::cout << octal << '\n';
   calcularValor();
 }
 
@@ -43,6 +42,7 @@ void Octal::calcularValor(){
   }
 
   valor = calculado;
+  std::cout << "Valor decimal: " << valor << '\n';
   //string numStr = "";
   //numStr += to_string(valor);
   //numeroString = numStr;
