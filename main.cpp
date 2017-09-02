@@ -26,17 +26,22 @@ int main(){
     switch (opcion) {
       case 1:{
         numeros.push_back(anadirNumero());
+        cout << endl << "Número añadido exitosamente" << endl;
       }break;
       case 2:{
         realizarOperacion(numeros);
       }break;
       case 3:{
-        //limpiarCache(numeros);
+        numeros.clear();
+        cout << endl << "Caché limpiado exitosamente" << endl;
       }break;
       case 4:{
         salir = true;
         cout << "Saliendo..." << endl;
         cout << "-------------------------------" << endl;
+      }break;
+      default:{
+        cout << "Opción inválida, por favor intente de nuevo." << endl;
       }break;
     }
   }
@@ -137,6 +142,7 @@ int identificarTipo(string numeroString){
 void realizarOperacion(vector<Numero> numeros){
   int op1, op2;
   Numero n1, n2;
+  bool continuar = true;
 
   cout << "Realizar Operación" << endl << endl;
 
@@ -146,42 +152,59 @@ void realizarOperacion(vector<Numero> numeros){
     cout << i << ". " << numeros.at(i).getNumeroString() << endl;
   }
 
-  cout << endl << "Ingrese su selección -  ";
+  cout << "Ingrese su selección -  ";
   cin >> op1;
-  n1 = (numeros.at(op1));
 
-  cout << endl << "Seleccione el numero con el cual operar" << endl;
-  for (int i = 0; i < numeros.size(); i++) {
-    cout << i << ". " << numeros.at(i).getNumeroString() << endl;
+  if (op1 > numeros.size() - 1) {
+    cout << "[ERROR] No existe un número con ese índice" << endl;
+    continuar = false;
   }
-  cout << endl << "Ingrese su selección -  ";
-  cin >> op2;
-  n2 = (numeros.at(op2));
+  if (continuar) {
+    n1 = (numeros.at(op1));
 
-  int oper;
+    cout << endl << "Seleccione el numero con el cual operar" << endl;
+    for (int i = 0; i < numeros.size(); i++) {
+      cout << i << ". " << numeros.at(i).getNumeroString() << endl;
+    }
+    cout << "Ingrese su selección -  ";
+    cin >> op2;
+    if (op2 > numeros.size() - 1) {
+      cout << "[ERROR] No existe un número con ese índice" << endl;
+      continuar = false;
+    }
 
-  cout << "Seleccione el tipo de operación" << endl
-  << "1. Suma" << endl
-  << "2. Resta" << endl
-  << "3. Multiplicar" << endl << endl
-  << "Ingrese el número de la opción que desea - ";
+    if (continuar) {
+      n2 = (numeros.at(op2));
 
-  cin >> oper;
+      int oper;
+      cout << "-------------------------------" << endl;
 
-  switch (oper) {
-    case 1:{
-      //mostrarResultados((*n1)+(*n2));
-      mostrarResultados(n1+n2);
-    }break;
-    case 2:{
-      //mostrarResultados((*n1)-(*n2));
-      mostrarResultados(n1-n2);
-    }break;
-    case 3:{
-      //mostrarResultados((*n1)*(*n2));
-      mostrarResultados(n1*n2);
-    }break;
+      cout << "Seleccione el tipo de operación" << endl
+      << "1. Suma" << endl
+      << "2. Resta" << endl
+      << "3. Multiplicar" << endl << endl
+      << "Ingrese el número de la opción que desea - ";
+
+      cin >> oper;
+
+      switch (oper) {
+        case 1:{
+          //mostrarResultados((*n1)+(*n2));
+          mostrarResultados(n1+n2);
+        }break;
+        case 2:{
+          //mostrarResultados((*n1)-(*n2));
+          mostrarResultados(n1-n2);
+        }break;
+        case 3:{
+          //mostrarResultados((*n1)*(*n2));
+          mostrarResultados(n1*n2);
+        }break;
+      }
+    }
+
   }
+
 
 }
 

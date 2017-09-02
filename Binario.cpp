@@ -23,7 +23,6 @@ Binario::Binario(int valorDecimal){
   }
     string binario = "1";
     for (int i = bin.length() - 1; i >= 0; i--) {
-      std::cout << bin[i] << '\n';
       binario += bin[i];
     }
 
