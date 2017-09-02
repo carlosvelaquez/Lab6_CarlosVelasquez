@@ -120,7 +120,7 @@ int identificarTipo(string numeroString){
       }
       return 2;
     }else if(numeroString[0] == '0' && numeroString[1] == 'c'){
-      std::cout << numeroString << '\n';
+      //std::cout << numeroString << '\n';
       for (int i = 2; i < numeroString.length(); i++) {
         if (isdigit(numeroString[i])) {
           if (((int)(numeroString[i]) - 48) > 7) {
